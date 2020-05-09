@@ -7,7 +7,7 @@
         "prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
-    "author": "",
+    "author": "rachni",
     "license": "ISC",
     "dependencies": {
         "cross-env": "^7.0.2",

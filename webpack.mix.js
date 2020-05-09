@@ -50,11 +50,11 @@ let getFiles = function (dir) {
 
 // Get all JS and output to individual files
 getFiles('resources/js').forEach(function (filepath) {
-    mix.js('resources/js/' + filepath, 'resources/js');
+    mix.js('resources/js/' + filepath, 'assets/js');
 });
 
 // Do the rest
-mix.sass('resources/sass/styles.scss', 'resources/css')
+mix.sass('resources/sass/styles.scss', 'assets/css')
     .extract()
     .sourceMaps()
     .version();
