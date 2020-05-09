@@ -1,0 +1,15 @@
+/* Import */
+
+//Defaults
+@import "variables";
+
+// NPM
+@import "~normalize-scss/sass/normalize";
+@include normalize();
+
+// Mixins and Base
+@import "mixins";
+@import "./base/!(_)*.scss";
+
+// Global
+@import "./components/!(_)*.scss";
