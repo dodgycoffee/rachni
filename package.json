@@ -1,6 +1,6 @@
 {
   "name": "rachni",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "A minimal laravel-mix build starter",
   "author": "Alex Brindley",
   "license": "Apache-2.0",
