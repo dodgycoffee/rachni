@@ -1,4 +1,4 @@
-.package-lock.json
 .vscode
+package-lock.json
 node_modules
 web
