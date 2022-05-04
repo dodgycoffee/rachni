@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "laravel-mix": "^6.0.43",
-        "npm": "^8.8.0"
+        "npm": "^7.24.2"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
