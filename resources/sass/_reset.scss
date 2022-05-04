@@ -1,0 +1,129 @@
+/*
+ * CSS Reset
+ * Based on Fix by Jayden Seric
+ * https://github.com/jaydenseric/Fix
+ */
+
+ * {
+    // styleline-disable-line
+    box-sizing: border-box; // Opinionated: Border box by default here
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    line-height: 1;
+    font-family: sans-serif;
+}
+
+iframe {
+    border: 0;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    li {
+        display: block;
+        list-style-type: none;
+    }
+}
+
+ol {
+    li {
+        padding: .25rem 0;
+    }
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+dd {
+    margin-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: inherit;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+strong {
+    font-weight: 400;
+}
+
+img {
+    display: block;
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    text-transform: inherit;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+    overflow: visible;
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+textarea {
+    -webkit-appearance: none;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}

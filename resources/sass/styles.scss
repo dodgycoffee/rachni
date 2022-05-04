@@ -1,14 +1,16 @@
 /* Import */
 
 //Defaults
+@import 'functions';
 @import "variables";
+@import 'reset';
 
 // NPM
-@import "~normalize-scss/sass/normalize";
-@include normalize();
 
 // Mixins and Base
 @import "mixins";
+@import 'typography';
+@import 'utilities';
 @import "./base/!(_)*.scss";
 
 // Global
