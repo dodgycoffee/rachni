@@ -1,24 +1,17 @@
 {
     "name": "rachni-project",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Built from dodgycoffee/rachni",
     "scripts": {
-        "dev": "mix",
-        "watch": "mix watch",
-        "prod": "mix --production"
-    },
-    "author": "dodgycoffee",
-    "license": "ISC",
-    "dependencies": {
-        "body-scroll-lock": "^4.0.0-beta.0",
-        "laravel-mix": "^6.0.39",
-        "npm": "^8.8.0"
+        "watch": "vite build --watch",
+        "build": "vite build",
+        "watch:mix": "vite build --watch --config vite.config.mix.js",
+        "build:mix": "vite build --config vite.config.mix.js"
     },
     "devDependencies": {
-        "cross-env": "^7.0.3",
-        "import-glob-loader": "^1.1.0",
-        "resolve-url-loader": "^4.0.0",
         "sass": "^1.43.4",
-        "sass-loader": "^12.3.0"
-    }
+        "vite": "^7.0.0",
+        "vite-plugin-sass-glob-import": "^6.0.3"
+    },
+    "sideEffects": true
 }

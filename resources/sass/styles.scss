@@ -11,7 +11,7 @@
 @import "mixins";
 @import 'typography';
 @import 'utilities';
-@import "./base/!(_)*.scss";
+@import "./base/*.scss";
 
 // Global
-@import "./components/!(_)*.scss";
+@import "./components/*.scss";

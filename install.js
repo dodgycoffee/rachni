@@ -1,48 +1,53 @@
 #!/usr/bin/env node
 
-const fs    = require('fs-extra');
-const path  = require('path');
-const chalk = require('chalk');
-const npm   = require('npm');
+import { copySync, readJsonSync, writeJsonSync, writeFileSync, removeSync } from 'fs-extra'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { execa } from 'execa'
+import chalk from 'chalk'
 
-const src   = path.resolve(__dirname);
-const dest  = path.resolve('./');
-
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const src = resolve(__dirname)
+const dest = resolve('./')
 
 // Copy files to project root
-console.log(`\nCopying starter files to ${dest}...`);
-let files = ['resources', 'package-template.json', 'webpack.mix.js'];
+console.log(`\nCopying starter files to ${dest}...`)
+
+let files = [
+    'resources',
+    'package-template.json',
+    'vite.config.js',
+    'vite.config.mix.js',
+    'vite.mix.js',
+]
 
 files.forEach(file => {
-    fs.copySync(path.join(src, file), path.join(dest, file));
-});
+    copySync(resolve(src, file), resolve(dest, file))
+})
 
-
-// Rename project
-let json = fs.readJsonSync('./package-template.json');
-
-fs.writeFile('./package.json', JSON.stringify(json, null, 4));
-fs.removeSync('./package-template.json');
-
+// Rename package-template.json to package.json
+let json = readJsonSync(resolve(dest, 'package-template.json'))
+writeJsonSync(resolve(dest, 'package.json'), json, { spaces: 4 })
+removeSync(resolve(dest, 'package-template.json'))
 
 // Create .gitignore
-let ignore = '.vscode\n' + 'node_modules\n' + 'web';
-fs.writeFile('./.gitignore', ignore);
+writeFileSync(resolve(dest, '.gitignore'), [
+    '.vscode',
+    'node_modules',
+    'web',
+].join('\n'))
 
-
-// File done
 console.log('Starter setup ' +
     chalk.green('complete.') + ' To view available commands, check your ' +
-    chalk.underline.yellow('package.json') + ' file.\n');
+    chalk.underline.yellow('package.json') + ' file.\n')
 
+// Install packages
+console.log('Installing npm packages...')
 
-// Install the packages
-console.log('Installing npm packages...');
-
-npm.load({}, function(e,npm) {
-    if (e) {
-        console.log("Problem running npm install. What did you do?");
-        process.exit();
-    }
-    npm.commands.install();
-});
+try {
+    await execa('npm', ['install'], { cwd: dest, stdio: 'inherit' })
+    console.log('\nAll done! ' + chalk.green('Happy coding.') + '\n')
+} catch (e) {
+    console.error(chalk.red('npm install failed. Try running it manually.'))
+    process.exit(1)
+}

@@ -1,31 +1,23 @@
 {
     "name": "rachni",
-    "version": "0.7.2",
-    "description": "A minimal laravel-mix build starter",
+    "version": "2.0.0",
+    "description": "A minimal Vite build starter",
     "author": "Alex Brindley",
     "license": "Apache-2.0",
-    "bin": "./install.js",
+    "type": "module",
+    "bin": {
+        "rachni": "./install.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/dodgycoffee/rachni.git"
-    },
-    "scripts": {
-        "dev": "mix",
-        "watch": "mix watch",
-        "prod": "mix --production"
     },
     "bugs": {
         "url": "https://github.com/dodgycoffee/rachni/issues"
     },
     "dependencies": {
-        "laravel-mix": "^6.0.43",
-        "npm": "^8.8.0"
-    },
-    "devDependencies": {
-        "cross-env": "^7.0.3",
-        "import-glob-loader": "^1.1.0",
-        "resolve-url-loader": "^4.0.0",
-        "sass": "^1.43.4",
-        "sass-loader": "^12.3.0"
+        "chalk": "^5.0.0",
+        "execa": "^9.0.0",
+        "fs-extra": "^11.0.0"
     }
 }
